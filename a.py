@@ -8,3 +8,4 @@ p2 = "este é um exemplo , exemplificado"
 if ' , ' in p2:
     p2 = p2.replace(' , ', ', ')
 print(p2)
+
