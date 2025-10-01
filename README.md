@@ -11,6 +11,11 @@ Este projeto procura desenvolver um modelo de *Named Entity Recognition* (NER) e
 
 # Desenvovimento
 
+## Datasets utiluzados
+
+- MultL: https://www.kaggle.com/datasets/thedevastator/multilingual-ner-dataset
+- LeNER-Br: https://www.kaggle.com/datasets/thedevastator/lener-br-portuguese-legal-ner-dataset
+- HAREM: https://www.kaggle.com/datasets/thedevastator/harem-portuguese-ner-corpus
 
 # Execução
 

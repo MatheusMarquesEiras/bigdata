@@ -1,7 +1,13 @@
-a = "['El' 'dúo' 'ganó' 'su' 'partido' 'de' 'primera' 'ronda' 'contra' 'los' 'mejores' 'sembrados' 'Juan' 'Sebastián' 'Cabal' 'y' 'Robert' 'Farah' 'en' 'sets' 'corridos' ',' 'luego' 'en' 'cuartos' 'a' 'Daniel' 'Evans' 'y' 'Ken' 'Skupski' 'también' 'en' 'sets' 'corridos' '.']"
+texto = "Olá, mundo!"
+sub = "mundo"
 
-import ast
+def get_position(text: str, sub: str):
+    begin = text.find(sub)
+    end = begin + len(sub)
 
-b = ast.literal_eval(a.replace("' '", "','"))
-print(b)
-print(type(b))
+    return begin, end
+
+inicio, fim = get_position(text=texto, sub=sub)
+
+print(f"Substring começa em {inicio} e termina em {fim}")
+# Saída: Substring começa em 5 e termina em 10
