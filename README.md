@@ -5,14 +5,16 @@ Projeto relizado pelo aluno **Matheus Marques Eiras** para a diciplina de sexto 
 
 Este projeto procura desenvolver um modelo de *Named Entity Recognition* (NER) em que busca recohecer uma serie de entidades
 
-# TODO
-
-- [ ] Escolher quais entidades eu vou usar para reconhecer 
+# Entidades usadas 
+| Dataset                        | Entidades | Liceça
+| :----------------------------: | :------:  | :------: |
+| Multilingual NER Dataset       | []        | CC0: Public Domain
+| LeNER-Br: Portuguese Legal NER | []        | CC0: Public Domain
+| HAREM Portuguese NER Corpus    | []        | CC0: Public Domain
 
 # Desenvovimento
 
 ## Datasets utiluzados
-
 - MultL: https://www.kaggle.com/datasets/thedevastator/multilingual-ner-dataset
 - LeNER-Br: https://www.kaggle.com/datasets/thedevastator/lener-br-portuguese-legal-ner-dataset
 - HAREM: https://www.kaggle.com/datasets/thedevastator/harem-portuguese-ner-corpus
