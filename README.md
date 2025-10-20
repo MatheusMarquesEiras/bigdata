@@ -22,3 +22,5 @@ Este projeto procura desenvolver um modelo de *Named Entity Recognition* (NER) e
 ## Instalação 
 
 Para roda este codigo é necessario instalar o CUDA Tool kit da nvidia instalado, o compilador de C/C++, o pytorch referente a verção do CUDA instalado no sistema e as dependencias descritas no *requirements.txt* 
+
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9
