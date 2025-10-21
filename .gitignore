@@ -1,7 +1,3 @@
 venv
-modelo_ner_en
-csv
-parquet
-model
-data
-traning
+*.csv
+*.parquet
