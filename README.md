@@ -6,11 +6,11 @@ Projeto relizado pelo aluno **Matheus Marques Eiras** para a diciplina de sexto 
 Este projeto procura desenvolver um modelo de *Named Entity Recognition* (NER) em que busca recohecer uma serie de entidades
 
 # Entidades usadas 
-| Dataset                        | Entidades | Liceça
-| :----------------------------: | :------:  | :------: |
-| Multilingual NER Dataset       | []        | CC0: Public Domain
-| LeNER-Br: Portuguese Legal NER | []        | CC0: Public Domain
-| HAREM Portuguese NER Corpus    | []        | CC0: Public Domain
+| Dataset                        | Entidades                                                                                                                                                                                                                                                               | Liceça             | HugginFace
+| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------:
+| Multilingual NER Dataset       | {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-ORG': 3, 'I-ORG': 4, 'B-LOC': 5, 'I-LOC': 6, 'B-MISC': 7, 'I-MISC': 8}                                                                                                                                                              | CC0: Public Domain | Babelscape/wikineural
+| LeNER-Br: Portuguese Legal NER | {"O", "B-ORGANIZACAO", "I-ORGANIZACAO", "B-PESSOA", "I-PESSOA", "B-TEMPO", "I-TEMPO", "B-LOCAL", "I-LOCAL", "B-LEGISLACAO", "I-LEGISLACAO", "B-JURISPRUDENCIA", "I-JURISPRUDENCIA}                                                                                      | CC0: Public Domain | peluz/lener_br
+| HAREM Portuguese NER Corpus    | {"O", "B-PESSOA", "I-PESSOA", "B-ORGANIZACAO", "I-ORGANIZACAO", "B-LOCAL", "I-LOCAL", "B-TEMPO", "I-TEMPO", "B-VALOR", "I-VALOR", "B-ABSTRACCAO", "I-ABSTRACCAO", "B-ACONTECIMENTO", "I-ACONTECIMENTO", "B-COISA", "I-COISA", "B-OBRA", "I-OBRA", "B-OUTRO", "I-OUTRO"} | CC0: Public Domain | Linguateca/harem
 
 # Desenvovimento
 
