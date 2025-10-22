@@ -3,3 +3,5 @@ venv
 *.parquet
 *.cfg
 *.spacy
+*.conll
+*.json
