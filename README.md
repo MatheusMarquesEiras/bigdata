@@ -35,7 +35,7 @@ https://developer.nvidia.com/cuda-12-8-0-download-archive
 
 #### Ambiente virtual
 
-Para iniciar o ambiente virtual e ativa-lo para instalar bibliotecas basta
+Para iniciar o ambiente virtual e ativa-lo para instalar bibliotecas basta (O python recomendado é 3.10)
 
 ``` bash
 python -m venv venv
@@ -59,6 +59,12 @@ pip install -U 'spacy[cuda12x,transformers,lookups]'
 ```
 
 para mais informações ou eros durante a instalaçõa ```https://spacy.io/usage```
+
+Por fim para instalar as outras dependências basta usar
+
+```bash
+pip install tqdm pandas fastparquet pyarrow
+```
 
 ## Rodar o projeto 
 
