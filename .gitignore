@@ -5,3 +5,5 @@ venv
 *.spacy
 *.conll
 *.json
+model_*
+data
