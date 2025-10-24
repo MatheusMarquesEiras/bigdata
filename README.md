@@ -71,7 +71,7 @@ https://huggingface.co/datasets/MatheusMarquesEiras/project-bigdata/tree/main
 
 Assim a estrutura deve ficar como na imagem
 
-![estrutura de diretório![Logo da empresa](caminho/para/logo.png "Logo da empresa")](./imgs/structure.png)
+![estrutura de diretório](./imgs/structure.png)
 
 OBS: para ter acesso aosmodelos já treinados basta bixa-los no reposiório ```https://huggingface.co/MatheusMarquesEiras/NER-bigdata/tree/main```
 
