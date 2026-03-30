@@ -1,92 +1,82 @@
-# Big Data
+# Big Data - Named Entity Recognition (NER)
 
-# Introdução 
-Projeto relizado pelo aluno **Matheus Marques Eiras** para a diciplina de sexto perio do curso de ciência da computação no Instituto Federal do Paraná (IFPR-Pinhais).
+<p align="center">
+  <img src="NER.jpg" alt="NER Illustration" width="600">
+</p>
 
-Este projeto procura desenvolver um modelo de *Named Entity Recognition* (NER) em que busca recohecer uma serie de entidades
+## 📌 Introdução 
 
-# Entidades usadas 
-| Dataset                        | Entidades                                                                                                                                                                                                                                                               | Liceça             |
-| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: |
-| Multilingual NER Dataset       | {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-ORG': 3, 'I-ORG': 4, 'B-LOC': 5, 'I-LOC': 6, 'B-MISC': 7, 'I-MISC': 8}                                                                                                                                                              | CC0: Public Domain |
-| LeNER-Br: Portuguese Legal NER | {"O", "B-ORGANIZACAO", "I-ORGANIZACAO", "B-PESSOA", "I-PESSOA", "B-TEMPO", "I-TEMPO", "B-LOCAL", "I-LOCAL", "B-LEGISLACAO", "I-LEGISLACAO", "B-JURISPRUDENCIA", "I-JURISPRUDENCIA}                                                                                      | CC0: Public Domain |
-| HAREM Portuguese NER Corpus    | {"O", "B-PESSOA", "I-PESSOA", "B-ORGANIZACAO", "I-ORGANIZACAO", "B-LOCAL", "I-LOCAL", "B-TEMPO", "I-TEMPO", "B-VALOR", "I-VALOR", "B-ABSTRACCAO", "I-ABSTRACCAO", "B-ACONTECIMENTO", "I-ACONTECIMENTO", "B-COISA", "I-COISA", "B-OBRA", "I-OBRA", "B-OUTRO", "I-OUTRO"} | CC0: Public Domain |
+Projeto realizado pelo aluno **Matheus Marques Eiras** para a disciplina de sexto período do curso de Ciência da Computação no Instituto Federal do Paraná (IFPR-Pinhais).
 
-## Datasets utiluzados
-- MultL: https://www.kaggle.com/datasets/thedevastator/multilingual-ner-dataset | https://huggingface.co/datasets/Babelscape/wikineural
-- LeNER-Br: https://www.kaggle.com/datasets/thedevastator/lener-br-portuguese-legal-ner-dataset | https://github.com/peluz/lener-br/blob/master/leNER-Br/train/train.conll
-- HAREM: https://www.kaggle.com/datasets/thedevastator/harem-portuguese-ner-corpus | https://github.com/gdutramartins/po-ner-2-portuguese-ner/tree/main/dataset
+Este projeto visa desenvolver um modelo de *Named Entity Recognition* (NER) capaz de identificar uma série de entidades em textos em português e multilíngues.
 
-# Execução
+---
 
-## Instalação 
+## 📊 Entidades Suportadas
 
-Para roda este codigo é necessario instalar o CUDA Tool kit da nvidia instalado, o compilador de C/C++ do visual studio, o pytorch referente a verção do CUDA instalado no sistema é recomendado a verção 12.8
+| Dataset | Entidades | Licença |
+| :--- | :--- | :---: |
+| **Multilingual NER Dataset** | PER, ORG, LOC, MISC | CC0 |
+| **LeNER-Br (Legal NER)** | ORG, PESSOA, TEMPO, LOCAL, LEGISLAÇÃO, JURISPRUDÊNCIA | CC0 |
+| **HAREM Corpus** | PESSOA, ORGANIZAÇÃO, LOCAL, TEMPO, VALOR, ABSTRAÇÃO, ACONTECIMENTO, COISA, OBRA, OUTRO | CC0 |
 
-### CUDA
+### 🔗 Datasets Utilizados
+*   **Multilingual NER:** [Kaggle](https://www.kaggle.com/datasets/thedevastator/multilingual-ner-dataset) | [HuggingFace](https://huggingface.co/datasets/Babelscape/wikineural)
+*   **LeNER-Br:** [Kaggle](https://www.kaggle.com/datasets/thedevastator/lener-br-portuguese-legal-ner-dataset) | [GitHub](https://github.com/peluz/lener-br)
+*   **HAREM:** [Kaggle](https://www.kaggle.com/datasets/thedevastator/harem-portuguese-ner-corpus) | [GitHub](https://github.com/gdutramartins/po-ner-2-portuguese-ner)
 
-para instalar o CUDA basta seguir as instruções presentes em 
+---
 
-``` bash
-https://developer.nvidia.com/cuda-12-8-0-download-archive
-```
+## 🚀 Execução e Instalação
 
-### Bivliotecas python
+### Pré-requisitos
+Para rodar este projeto com aceleração de GPU, é necessário:
+1.  **NVIDIA CUDA Toolkit** (versão recomendada: 12.8).
+2.  **Compilador C/C++** (Visual Studio Build Tools).
+3.  **Python 3.10**.
 
-#### Ambiente virtual
+#### 1. Instalação do CUDA
+Siga as instruções oficiais em: [NVIDIA CUDA Download](https://developer.nvidia.com/cuda-12-8-0-download-archive)
 
-Para iniciar o ambiente virtual e ativa-lo para instalar bibliotecas basta (O python recomendado é 3.10)
-
-``` bash
+#### 2. Ambiente Virtual
+```bash
 python -m venv venv
-venv\Scripts\activate
+# No Windows:
+.\venv\Scripts\activate
 ```
 
-#### Pytorch
-
-Para instalar o pythorch recomendado é necessario usar o comando 
-
-``` bash
+#### 3. Dependências Principais (PyTorch & spaCy)
+```bash
+# PyTorch com suporte a CUDA 12.8
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-```
 
-#### spaCy
-
-Para instalar a biblioteca spacy basta usar o comando
-
-``` bash
+# spaCy com suporte a Transformers e GPU
 pip install -U 'spacy[cuda12x,transformers,lookups]'
 ```
+*Para mais detalhes ou erros na instalação, consulte [spacy.io/usage](https://spacy.io/usage).*
 
-para mais informações ou eros durante a instalaçõa ```https://spacy.io/usage```
-
-Por fim para instalar as outras dependências basta usar
-
+#### 4. Outras Bibliotecas
 ```bash
 pip install tqdm pandas fastparquet pyarrow
 ```
 
-## Rodar o projeto 
+---
 
-### Preparação do ambiente 
+## 📂 Como Rodar o Projeto
 
-Baixar o arquivo ```data.7z``` disponivel no site Hugginface
-``` bash
-https://huggingface.co/datasets/MatheusMarquesEiras/project-bigdata/tree/main
-```
+### Preparação do Ambiente 
+1. Baixe o arquivo `data.7z` disponível no [HuggingFace](https://huggingface.co/datasets/MatheusMarquesEiras/project-bigdata/tree/main).
+2. Extraia o conteúdo para que a estrutura de diretórios siga o padrão abaixo:
 
-Assim a estrutura deve ficar como na imagem
+![Estrutura de diretório](./imgs/structure.png)
 
-![estrutura de diretório](./imgs/structure.png)
+> **Nota:** Para utilizar os modelos já treinados, baixe-os em: [NER-bigdata Repository](https://huggingface.co/MatheusMarquesEiras/NER-bigdata/tree/main)
 
-OBS: para ter acesso aosmodelos já treinados basta bixa-los no reposiório ```https://huggingface.co/MatheusMarquesEiras/NER-bigdata/tree/main```
+### Ordem de Execução
+Os notebooks na pasta `notebook/` devem ser executados na seguinte ordem:
 
-### Ordem para rodar
+1.  `1-preprocess_datasets.ipynb`: Limpeza e preparação dos dados.
+2.  `2-get_spacy_files.ipynb`: Conversão para o formato binário do spaCy.
+3.  `3-make_config_files_and_train.ipynb`: Configuração e treinamento do modelo.
 
-A ordem que os notebooks (presentes na pasta "notebook") é a seguinte 
-
-- 1-preprocess_datasets.ipynb
-- 2-get_spacy_files.ipynb
-- 3-make_config_files_and_train.ipynb
-
-Agora o notebook ```4-train_model_old.ipynb``` é apenas o código que foi usado de base pelo projeto escolhido (https://amanxai.com/2020/12/25/named-entity-recognition-with-python/#google_vignette)
+*O arquivo `4-train_model_old.ipynb` contém o código base utilizado como referência inicial (créditos: [Aman Kharya](https://amanxai.com/2020/12/25/named-entity-recognition-with-python/)).*
